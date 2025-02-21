@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PLAN EIGHT: Meal Planner and Expense Tracker - Homepage</title>
+        <link rel="stylesheet" href="hp.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            // List of image URLs to loop through
+            const imageUrls = ["images/add-app.png", "images/other-app.png", "images/pick-app.png"];
+
+            // Get the image element
+            const imageElement = document.querySelector('.section-1-container-item-5 img');
+
+            // Function to change the image with a fading transition
+            function changeImage() {
+                let currentIndex = 0;
+
+                // Set an interval to change the image every 3 seconds
+                setInterval(() => {
+                    // Fade out the image
+                    imageElement.style.opacity = 0;
+
+                    // After a short delay, change the image source and fade it back in
+                    setTimeout(() => {
+                        imageElement.src = imageUrls[currentIndex];
+                        currentIndex = (currentIndex + 1) % imageUrls.length;
+
+                        // Use requestAnimationFrame to ensure the style changes are applied before fading in
+                        requestAnimationFrame(() => {
+                            // Reset opacity to fade in
+                            imageElement.style.opacity = 1;
+                        });
+                    }, 500); // Adjust the delay as needed
+                }, 3000);
+            }
+
+            // Call the function to start the image rotation
+            changeImage();
+        });
+        </script>
+    </head>
+    <body>
+        <section class="section-1">
+            <div class="section-1-container">
+                <div class="section-1-container-item-1">
+                    <img src="images/header-bg.png" style="width: 100%;">
+                </div>
+                <div class="section-1-container-item-2"><center><img src="images/logo.png" width="100%" style="border-radius: 10%;"></center></div>
+                <div class="section-1-container-item-3"></div>
+                <div class="section-1-container-item-4">
+                    <center style="margin-top: 1vw;">
+                        <img class="home-button" src="images/home-in-home.png" style="border-radius: 10% 10% 10% 10%; height: 6.5vw; margin-top: 0%; margin-left: 2vw; margin-right: 2vw; ">
+                        <a href="download-page.html"><img class="download-button" src="images/download.png" style="border-radius: 10% 10% 10% 10%; height: 6.5vw; margin-top: 0%; margin-left: 2vw; margin-right: 2vw;"></a>
+                        <a href="about-us.html"><img class="about-us-button" src="images/about-us.png" style="border-radius: 10% 10% 10% 10%; height: 6.5vw; margin-top: 0%; margin-left: 2vw; margin-right: 2vw;"></a>
+                    </center>
+                </div>
+                <div class="section-1-container-item-5">
+                    <img src="" width="100%">
+                </div>
+            </div>
+        </section>
+        <section class="section-2">
+            <div class="section-2-container">
+                <div class="section-2-container-item-1"><img src="images/bg1.png" style="width: 100%;"></div>
+                <div class="section-2-container-item-2"><center><img src="images/intro-text.png" style="width: 50%"></center></div>
+                <div class="section-2-container-item-3">
+                    <p>Developed by a group of students from STI College Las Pinas, 
+                    IT211, a meal planner 
+                    desktop application that 
+                    will aim to monitor the food expenses of the students 
+                    by allowing them to plan their meals in advance.</p>
+                </div>
+                <div class="section-2-container-item-4"><center><img src="images/other-app.png" style="width: 100%"></center></div>
+            </div>
+        </section>
+        <section class="section-3">
+            <div class="section-3-container">
+                <div class="section-3-container-item-1"><img src="images/bg2.png" style="width: 100%;"></div>
+                <div class="section-3-container-item-2"><center><img src="images/add-text.png" style="width: 65%"></center></div>
+                <div class="section-3-container-item-3">
+                    <p>In this Meal Planner, you were able to set and pick your own food plan, pick a day with just one click. 
+                        Planning your food right away can save your time.</p>
+                </div>
+                <div class="section-3-container-item-4">
+                    <img src="images/add-app.png" width="100%">
+                </div>
+            </div>
+        </section>
+        <section class="section-3">
+            <div class="section-3-container">
+                <div class="section-3-container-item-1"><img src="images/bg2.png" style="width: 100%;"></div>
+                <div class="section-3-container-item-2"><center><img src="images/pick-text.png" style="width: 65%"></center></div>
+                <div class="section-3-container-item-3">
+                    <p>With this application you were able to set your own food plan, pick your 
+                        choices of foods and drinks and set it for the next day.</p>
+                </div>
+                <div class="section-3-container-item-4">
+                    <img src="images/pick-app.png" width="100%">
+                </div>
+            </div>
+        </section>
+        <section class="section-5">
+            <div class="section-5-container" style="margin-top: -2.5vw; margin-bottom: -2.5vw;">
+                <div class="section-5-container-item-1"><img src="images/bg4.png" style="width: 100%;"></div>
+                <div class="section-5-container-item-2"><center><img src="images/the-group-boast-its-interactive-features.png" style="width: 80%"></center></div>
+                <div class="section-5-container-item-3">
+                    <p>Users can customizely 😎 add their planned meals, expenses and schedule it for later time. Pick from our wide preset list 📃  of meals from 
+                        your favorite go-to-meal places. Lastly, view your meal plan right at your fingertips using your email accounts, and by your phone 📲  
+                        bring your plan.</p>
+                </div>
+                <div class="section-5-container-item-4">
+                    <p>ANYTIME, ANYWHERE!</p>
+                </div>
+                <div class="section-5-container-item-5">
+                    <img src="images/33aec759c9.gif" width="120%">
+                </div>
+                <div class="section-5-container-item-6">
+                    <center>
+                        <button type="submit" onclick="topFunction()" class="top-button" id="myBtn" style="border-radius: 30%;"><img src="images/arrow.png" width="70%"></button>
+                    </center>
+                </div>
+            </div>
+        </section>
+        <section class="form">
+            <img class="background-image" src="images/form-bg.png">
+            <div class="contact-box">
+                <form id="contact-form">
+                    <h1>Contact us</h1>
+                    <p>If you have any concerns, just leave a message!</p>
+    
+                    <div class="input-container">
+                        <input type="text" name="name" class="input-field" placeholder="Name" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" name="email" class="input-field" placeholder="Email" required>
+                    </div>
+                    <textarea name="message" class="input-field textarea-field" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn">
+                        Send Message <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    
+        <script>
+            // Your Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB_A2vo2J2WRc2sm0NTQuuUnIjNwM8PjAk",
+                authDomain: "planeightmobiappdb.firebaseapp.com",
+                databaseURL: "https://planeightmobiappdb-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "planeightmobiappdb",
+                storageBucket: "planeightmobiappdb.appspot.com",
+                messagingSenderId: "716414117992",
+                appId: "1:716414117992:web:157f745ef51ed8b090b3dd"
+            };
+    
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+    
+            // Reference to your database
+            var database = firebase.database();
+    
+            // Form submission handler
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                var name = event.target.name.value;
+                var email = event.target.email.value;
+                var message = event.target.message.value;
+    
+                // Save message to Firebase
+                database.ref('messages').push({
+                    name: name,
+                    email: email,
+                    message: message,
+                    timestamp: Date.now()
+                }).then(() => {
+                    alert('Message sent successfully!');
+                    // Clear form
+                    event.target.reset();
+                }).catch((error) => {
+                    console.error('Error writing new message to Firebase Database', error);
+                });
+            });
+        </script>
+
+        <script>
+            // Get the button:
+            let mybutton = document.getElementById("myBtn");
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0; // For Safari
+              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+        </script>
+    </body>
+</html>
